@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multilingual - AI Course Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                AI
+            </div>
+
+            <div>
+                <h2>Course Assistant</h2>
+                <span>AI Powered Learning</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="index.html" class="nav-item">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="index.html#generator" class="nav-item">
+                <span>✦</span>
+                Generate Content
+            </a>
+
+            <a href="courses.html" class="nav-item">
+                <span>▣</span>
+                My Courses
+            </a>
+
+            <a href="multilingual.html" class="nav-item active">
+                <span>文</span>
+                Multilingual
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>▤</span>
+                Resources
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <div class="status-dot"></div>
+
+                <div>
+                    <strong>AI Online</strong>
+                    <small>Ready to learn</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+
+                <p class="welcome">
+                    LANGUAGE SUPPORT
+                </p>
+
+                <h1>
+                    Multilingual Learning
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="online-badge">
+
+                    <span></span>
+
+                    AI Connected
+
+                </div>
+
+
+                <div class="profile">
+                    S
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- MULTILINGUAL CARD -->
+        <section class="generator-card">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Translate Learning Content
+                    </h2>
+
+                    <p>
+                        Convert educational content into your preferred language.
+                    </p>
+
+                </div>
+
+                <div class="hero-decoration">
+                    文
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT INPUT -->
+
+            <div class="form-group">
+
+                <label for="content">
+                    Learning Content
+                </label>
+
+                <textarea
+                    id="content"
+                    rows="10"
+                    placeholder="Enter or paste your learning content here..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- LANGUAGE -->
+
+            <div class="form-group">
+
+                <label for="targetLanguage">
+                    Select Language
+                </label>
+
+                <select id="targetLanguage">
+
+                    <option value="Malayalam">
+                        Malayalam
+                    </option>
+
+                    <option value="Hindi">
+                        Hindi
+                    </option>
+
+                    <option value="Tamil">
+                        Tamil
+                    </option>
+
+                    <option value="Kannada">
+                        Kannada
+                    </option>
+
+                    <option value="Telugu">
+                        Telugu
+                    </option>
+
+                    <option value="English">
+                        English
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <button
+                id="translateBtn"
+                class="generate-btn"
+            >
+
+                ✨ Translate Content
+
+            </button>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="translateLoading"
+                class="hidden"
+            >
+
+                Translating...
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <section
+                id="translationResult"
+                class="result-section hidden"
+            >
+
+                <div class="result-header">
+
+                    <div>
+
+                        <p class="result-label">
+                            TRANSLATED CONTENT
+                        </p>
+
+                        <h2 id="translationTitle">
+                            Translation
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="copyTranslationBtn"
+                        class="copy-btn"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="translationContent"
+                    class="result-content"
+                ></div>
+
+            </section>
+
+        </section>
+
+
+        <!-- INFORMATION CARDS -->
+
+        <section class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    文
+                </div>
+
+                <h3>
+                    Multiple Languages
+                </h3>
+
+                <p>
+                    Supports learning content in different Indian languages.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    AI Translation
+                </h3>
+
+                <p>
+                    Uses AI to translate educational explanations while preserving meaning.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ◉
+                </div>
+
+                <h3>
+                    Better Understanding
+                </h3>
+
+                <p>
+                    Helps students learn difficult concepts in a familiar language.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="multilingual.js"></script>
+
+</body>
+
+</html>

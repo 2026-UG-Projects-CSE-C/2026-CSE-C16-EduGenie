@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Courses - AI Course Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Markdown support -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="app">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>
+                        Course Assistant
+                    </h2>
+
+                    <span>
+                        AI Powered Learning
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="index.html" class="nav-item">
+
+                    <span>⌂</span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="index.html" class="nav-item">
+
+                    <span>✦</span>
+
+                    Generate Content
+
+                </a>
+
+
+                <a href="courses.html" class="nav-item active">
+
+                    <span>▣</span>
+
+                    My Courses
+
+                </a>
+
+
+                <a href="#" class="nav-item">
+
+                    <span>文</span>
+
+                    Multilingual
+
+                </a>
+
+
+                <a href="#" class="nav-item">
+
+                    <span>▤</span>
+
+                    Resources
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="ai-status">
+
+                    <div class="status-dot"></div>
+
+                    <div>
+
+                        <strong>
+                            AI Online
+                        </strong>
+
+                        <small>
+                            Ready to learn
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+             ===================================================== -->
+
+        <main class="main">
+
+
+            <!-- =================================================
+                 TOP BAR
+                 ================================================= -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="welcome">
+                        YOUR LEARNING
+                    </p>
+
+                    <h1>
+                        My Courses
+                    </h1>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="online-badge">
+
+                        <span></span>
+
+                        AI Connected
+
+                    </div>
+
+
+                    <div class="profile">
+                        S
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAGE INTRO
+                 ================================================= -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="hero-label">
+                        📚 SAVED LEARNING MATERIAL
+                    </div>
+
+
+                    <h2>
+
+                        Your generated
+
+                        <span>
+                            course content.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        View and open the learning materials
+                        you have generated using the
+                        AI Course Assistant.
+
+                    </p>
+
+                </div>
+
+
+                <div class="hero-decoration">
+                    ✦
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SAVED COURSES
+                 ================================================= -->
+
+            <section class="generator-card">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <h2>
+                            Saved Courses
+                        </h2>
+
+                        <p>
+                            Click any course to view the complete content.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sparkle">
+                        📚
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LOADING
+                     ================================================= -->
+
+                <div
+                    id="coursesLoading"
+                    class="loading"
+                >
+
+                    <div class="loader"></div>
+
+
+                    <div>
+
+                        <strong>
+                            Loading your courses...
+                        </strong>
+
+                        <small>
+                            Please wait a moment.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COURSE LIST
+                     ================================================= -->
+
+                <div id="coursesList"></div>
+
+
+
+                <!-- =================================================
+                     EMPTY MESSAGE
+                     ================================================= -->
+
+                <div
+                    id="emptyMessage"
+                    class="hidden"
+                >
+
+                    <div class="content-card">
+
+                        <h3>
+                            No courses generated yet
+                        </h3>
+
+
+                        <p>
+
+                            Generate your first course content
+                            from the Generate Content page.
+
+                        </p>
+
+
+                        <br>
+
+
+                        <a
+                            href="index.html"
+                            class="generate-btn"
+                        >
+
+                            ✦ Generate Course Content
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COMPLETE CONTENT VIEW
+                     ================================================= -->
+
+                <section
+                    id="courseContentSection"
+                    class="hidden"
+                    style="margin-top:30px;"
+                >
+
+                    <div class="result-header">
+
+                        <div>
+
+                            <p class="result-label">
+                                SAVED COURSE CONTENT
+                            </p>
+
+
+                            <h2 id="courseContentTitle">
+                                Course Content
+                            </h2>
+
+                        </div>
+
+
+                        <div class="result-actions">
+
+                            <button id="backBtn">
+                                ← Back to Courses
+                            </button>
+
+
+                            <button id="copyCourseBtn">
+                                Copy
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div id="courseContent"></div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+                 ================================================= -->
+
+            <footer>
+
+                <p>
+                    AI Course Assistant • Intelligent Educational Content Generation
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+         ========================================================= -->
+
+    <script>
+
+
+        // =====================================================
+        // ELEMENTS
+        // =====================================================
+
+        const coursesList =
+            document.getElementById("coursesList");
+
+
+        const coursesLoading =
+            document.getElementById("coursesLoading");
+
+
+        const emptyMessage =
+            document.getElementById("emptyMessage");
+
+
+        const courseContentSection =
+            document.getElementById("courseContentSection");
+
+
+        const courseContentTitle =
+            document.getElementById("courseContentTitle");
+
+
+        const courseContent =
+            document.getElementById("courseContent");
+
+
+        const backBtn =
+            document.getElementById("backBtn");
+
+
+        const copyCourseBtn =
+            document.getElementById("copyCourseBtn");
+
+
+
+        // =====================================================
+        // LOAD COURSES
+        // =====================================================
+
+        async function loadCourses() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        "http://127.0.0.1:8000/courses"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load courses."
+                    );
+
+                }
+
+
+                const courses =
+                    await response.json();
+
+
+                coursesLoading
+                    .classList
+                    .add("hidden");
+
+
+
+                // =================================================
+                // NO COURSES
+                // =================================================
+
+                if (
+                    !courses ||
+                    courses.length === 0
+                ) {
+
+                    emptyMessage
+                        .classList
+                        .remove("hidden");
+
+                    return;
+
+                }
+
+
+
+                // =================================================
+                // CREATE COURSE CARDS
+                // =================================================
+
+                coursesList.innerHTML = "";
+
+
+                courses.forEach(course => {
+
+
+                    const card =
+                        document.createElement("div");
+
+
+                    card.className =
+                        "content-card";
+
+
+                    card.style.marginBottom =
+                        "18px";
+
+
+                    card.style.cursor =
+                        "pointer";
+
+
+                    card.style.transition =
+                        "transform 0.2s ease, box-shadow 0.2s ease";
+
+
+
+                    // =================================================
+                    // COURSE CARD
+                    // =================================================
+
+                    card.innerHTML = `
+
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:flex-start;
+                            gap:20px;
+                        ">
+
+
+                            <div>
+
+                                <p class="result-label">
+
+                                    ${course.content_type || "COURSE CONTENT"}
+
+                                </p>
+
+
+                                <h2 style="margin:8px 0;">
+
+                                    ${course.topic || "Untitled Topic"}
+
+                                </h2>
+
+
+                                <p>
+
+                                    <strong>
+                                        Subject:
+                                    </strong>
+
+                                    ${course.subject || "Unknown"}
+
+                                </p>
+
+
+                                <p>
+
+                                    <strong>
+                                        Level:
+                                    </strong>
+
+                                    ${course.difficulty || "University Level"}
+
+                                </p>
+
+
+                                <p>
+
+                                    <strong>
+                                        Language:
+                                    </strong>
+
+                                    ${course.language || "English"}
+
+                                </p>
+
+
+                            </div>
+
+
+                            <div style="
+                                padding:10px 14px;
+                                border-radius:10px;
+                                background:#f0f1ff;
+                                font-size:13px;
+                                white-space:nowrap;
+                            ">
+
+                                SAVED
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div style="
+                            margin-top:18px;
+                            padding-top:14px;
+                            border-top:1px solid #eeeeee;
+                            font-size:14px;
+                            font-weight:600;
+                        ">
+
+                            Click to view complete content →
+
+                        </div>
+
+                    `;
+
+
+
+                    // =================================================
+                    // HOVER EFFECT
+                    // =================================================
+
+                    card.addEventListener(
+                        "mouseenter",
+                        () => {
+
+                            card.style.transform =
+                                "translateY(-3px)";
+
+                            card.style.boxShadow =
+                                "0 10px 25px rgba(0,0,0,0.08)";
+
+                        }
+                    );
+
+
+                    card.addEventListener(
+                        "mouseleave",
+                        () => {
+
+                            card.style.transform =
+                                "translateY(0)";
+
+                            card.style.boxShadow =
+                                "";
+
+                        }
+                    );
+
+
+
+                    // =================================================
+                    // CLICK COURSE
+                    // =================================================
+
+                    card.addEventListener(
+                        "click",
+                        () => {
+
+                            openCourse(course);
+
+                        }
+                    );
+
+
+                    coursesList.appendChild(card);
+
+                });
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Courses error:",
+                    error
+                );
+
+
+                coursesLoading
+                    .classList
+                    .add("hidden");
+
+
+                coursesList.innerHTML = `
+
+                    <div class="content-card">
+
+                        <h3>
+                            Unable to load courses
+                        </h3>
+
+
+                        <p>
+
+                            Please make sure the backend
+                            server is running.
+
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+
+        // =====================================================
+        // OPEN COURSE
+        // =====================================================
+
+        async function openCourse(course) {
+
+
+            try {
+
+
+                // Hide course list
+
+                coursesList.style.display =
+                    "none";
+
+
+                // Hide empty message
+
+                emptyMessage.style.display =
+                    "none";
+
+
+                // Show content section
+
+                courseContentSection
+                    .classList
+                    .remove("hidden");
+
+
+                courseContentSection
+                    .style
+                    .display =
+                    "block";
+
+
+                // Set title
+
+                courseContentTitle.innerText =
+                    `${course.topic || "Course"} - ${course.content_type || "Content"}`;
+
+
+                // Show loading message
+
+                courseContent.innerHTML = `
+
+                    <div style="
+                        text-align:center;
+                        padding:30px;
+                    ">
+
+                        <div class="loader"
+                             style="margin:auto;">
+                        </div>
+
+                        <p style="margin-top:15px;">
+                            Loading complete course content...
+                        </p>
+
+                    </div>
+
+                `;
+
+
+
+                // =================================================
+                // GET COMPLETE COURSE
+                // =================================================
+
+                const response =
+                    await fetch(
+                        `http://127.0.0.1:8000/course/${course.id}`
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to open course."
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+
+                // =================================================
+                // DISPLAY MARKDOWN
+                // =================================================
+
+                if (
+                    typeof marked !== "undefined" &&
+                    data.content
+                ) {
+
+                    courseContent.innerHTML =
+                        marked.parse(
+                            data.content
+                        );
+
+                }
+
+                else {
+
+                    courseContent.innerText =
+                        data.content ||
+                        "No content available.";
+
+                }
+
+
+
+                // Scroll to content
+
+                setTimeout(
+                    () => {
+
+                        courseContentSection
+                            .scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                    },
+                    100
+                );
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Open course error:",
+                    error
+                );
+
+
+                courseContent.innerHTML = `
+
+                    <h3>
+                        Unable to open course
+                    </h3>
+
+
+                    <p>
+
+                        ${error.message}
+
+                    </p>
+
+                `;
+
+            }
+
+        }
+
+
+
+        // =====================================================
+        // BACK TO COURSES
+        // =====================================================
+
+        backBtn.addEventListener(
+            "click",
+            () => {
+
+                courseContentSection
+                    .classList
+                    .add("hidden");
+
+
+                courseContentSection
+                    .style
+                    .display =
+                    "none";
+
+
+                coursesList.style.display =
+                    "block";
+
+
+                window.scrollTo({
+                    top:0,
+                    behavior:"smooth"
+                });
+
+            }
+        );
+
+
+
+        // =====================================================
+        // COPY COMPLETE CONTENT
+        // =====================================================
+
+        copyCourseBtn.addEventListener(
+            "click",
+            async () => {
+
+
+                const text =
+                    courseContent.innerText.trim();
+
+
+                if (!text) {
+
+                    alert(
+                        "There is no content to copy."
+                    );
+
+                    return;
+
+                }
+
+
+                try {
+
+
+                    await navigator
+                        .clipboard
+                        .writeText(text);
+
+
+                    copyCourseBtn.innerText =
+                        "Copied!";
+
+
+                    setTimeout(
+                        () => {
+
+                            copyCourseBtn.innerText =
+                                "Copy";
+
+                        },
+                        2000
+                    );
+
+
+                }
+
+
+                catch (error) {
+
+                    console.error(
+                        "Copy error:",
+                        error
+                    );
+
+
+                    alert(
+                        "Unable to copy the content."
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        // =====================================================
+        // START
+        // =====================================================
+
+        loadCourses();
+
+
+    </script>
+
+</body>
+
+</html>

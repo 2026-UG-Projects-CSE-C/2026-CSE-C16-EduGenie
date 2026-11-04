@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources - AI Course Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <div>
+
+                <h2>Course Assistant</h2>
+
+                <p>
+                    AI Powered Learning
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="index.html" class="nav-item">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="index.html" class="nav-item">
+                <span>✦</span>
+                Generate Content
+            </a>
+
+            <a href="courses.html" class="nav-item">
+                <span>▣</span>
+                My Courses
+            </a>
+
+            <a href="multilingual.html" class="nav-item">
+                <span>文</span>
+                Multilingual
+            </a>
+
+            <a href="resources.html" class="nav-item active">
+                <span>▤</span>
+                Resources
+            </a>
+
+        </nav>
+
+
+        <div class="ai-status">
+
+            <div class="status-dot"></div>
+
+            <div>
+
+                <strong>
+                    AI Online
+                </strong>
+
+                <small>
+                    Ready to learn
+                </small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <div class="page-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    COURSE RESOURCES
+                </p>
+
+                <h1>
+                    Learning Resources
+                </h1>
+
+                <p>
+                    Upload your syllabus and create
+                    personalized AI-powered learning material.
+                </p>
+
+            </div>
+
+
+            <div class="ai-connected">
+                <span>●</span>
+                AI Connected
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STEP INDICATOR
+        ================================================== -->
+
+        <div class="resource-steps">
+
+            <div class="resource-step active">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div>
+                    <strong>Upload</strong>
+                    <small>Add your syllabus</small>
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="resource-step">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div>
+                    <strong>Choose</strong>
+                    <small>Select your topic</small>
+                </div>
+
+            </div>
+
+
+            <div class="step-line"></div>
+
+
+            <div class="resource-step">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div>
+                    <strong>Generate</strong>
+                    <small>Create learning material</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SYLLABUS UPLOAD
+        ================================================== -->
+
+        <section class="resource-card syllabus-upload-card">
+
+
+            <div class="section-heading">
+
+                <div class="resource-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <p class="section-label">
+                        STEP 1
+                    </p>
+
+                    <h2>
+                        Upload Course Syllabus
+                    </h2>
+
+                    <p>
+                        Give the AI your course syllabus so it can
+                        understand the subjects, units and topics.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- UPLOAD AREA -->
+
+            <div class="upload-box" id="uploadBox">
+
+                <div class="upload-symbol">
+                    ⬆
+                </div>
+
+                <h3>
+                    Choose your syllabus
+                </h3>
+
+                <p>
+                    PDF or TXT files supported
+                </p>
+
+
+                <label
+                    for="syllabusFile"
+                    class="choose-file-btn"
+                >
+                    📄 Choose File
+                </label>
+
+
+                <input
+                    type="file"
+                    id="syllabusFile"
+                    accept=".pdf,.txt"
+                    hidden
+                >
+
+
+                <div
+                    id="selectedFileName"
+                    class="selected-file"
+                >
+                    No file selected
+                </div>
+
+            </div>
+
+
+
+            <!-- UPLOAD BUTTON -->
+
+            <button
+                id="uploadBtn"
+                class="primary-btn"
+                type="button"
+            >
+
+                ✨ Upload Syllabus
+
+            </button>
+
+
+
+            <!-- PERMANENT STATUS -->
+
+            <div
+                id="uploadStatus"
+                class="upload-status"
+            ></div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             GENERATE FROM SYLLABUS
+        ================================================== -->
+
+        <section
+            class="resource-card"
+            id="syllabusGenerationCard"
+        >
+
+
+            <div class="section-heading">
+
+                <div class="resource-icon">
+                    ✨
+                </div>
+
+                <div>
+
+                    <p class="section-label">
+                        STEP 2
+                    </p>
+
+                    <h2>
+                        Create Learning Material
+                    </h2>
+
+                    <p>
+                        Choose what you want the AI to create.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUICK CONTENT TYPES -->
+
+            <div class="content-type-heading">
+
+                <strong>
+                    What would you like to create?
+                </strong>
+
+                <span>
+                    Select one
+                </span>
+
+            </div>
+
+
+            <div class="content-type-grid">
+
+
+                <button
+                    type="button"
+                    class="content-type-card selected"
+                    data-type="Lecture Notes"
+                >
+
+                    <span>📖</span>
+
+                    <strong>
+                        Lecture Notes
+                    </strong>
+
+                    <small>
+                        Detailed classroom notes
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="content-type-card"
+                    data-type="Study Notes"
+                >
+
+                    <span>📝</span>
+
+                    <strong>
+                        Study Notes
+                    </strong>
+
+                    <small>
+                        Easy revision material
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="content-type-card"
+                    data-type="Question Bank"
+                >
+
+                    <span>❓</span>
+
+                    <strong>
+                        Question Bank
+                    </strong>
+
+                    <small>
+                        Practice questions
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="content-type-card"
+                    data-type="Question Paper"
+                >
+
+                    <span>📄</span>
+
+                    <strong>
+                        Question Paper
+                    </strong>
+
+                    <small>
+                        University-style paper
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="content-type-card"
+                    data-type="Topic Explanation"
+                >
+
+                    <span>💡</span>
+
+                    <strong>
+                        Topic Explanation
+                    </strong>
+
+                    <small>
+                        Step-by-step explanation
+                    </small>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="content-type-card"
+                    data-type="Revision Notes"
+                >
+
+                    <span>⚡</span>
+
+                    <strong>
+                        Revision Notes
+                    </strong>
+
+                    <small>
+                        Quick revision
+                    </small>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- TOPIC -->
+
+            <div class="form-group">
+
+                <label for="syllabusTopic">
+                    Topic
+                </label>
+
+                <input
+                    type="text"
+                    id="syllabusTopic"
+                    placeholder="Example: Database Normalization"
+                >
+
+                <small class="input-help">
+                    Enter a topic from your uploaded syllabus.
+                </small>
+
+            </div>
+
+
+
+            <!-- OPTIONS -->
+
+            <div class="resource-form-grid">
+
+
+                <div class="form-group">
+
+                    <label for="syllabusDifficulty">
+                        Difficulty Level
+                    </label>
+
+                    <select id="syllabusDifficulty">
+
+                        <option value="University Level">
+                            University Level
+                        </option>
+
+                        <option value="Beginner">
+                            Beginner
+                        </option>
+
+                        <option value="Intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="Advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="syllabusLanguage">
+                        Language
+                    </label>
+
+                    <select id="syllabusLanguage">
+
+                        <option value="English">
+                            English
+                        </option>
+
+                        <option value="Malayalam">
+                            Malayalam
+                        </option>
+
+                        <option value="Hindi">
+                            Hindi
+                        </option>
+
+                        <option value="Tamil">
+                            Tamil
+                        </option>
+
+                        <option value="Kannada">
+                            Kannada
+                        </option>
+
+                        <option value="Telugu">
+                            Telugu
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+                id="generateSyllabusBtn"
+                class="primary-btn generate-btn"
+                type="button"
+            >
+
+                ✨ Generate Learning Material
+
+            </button>
+
+
+
+            <!-- GENERATION STATUS -->
+
+            <div
+                id="syllabusGenerationStatus"
+                class="upload-status"
+            ></div>
+
+
+
+            <!-- =================================================
+                 RESULT
+            ================================================== -->
+
+            <div
+                id="syllabusResult"
+                class="generated-result"
+                style="display:none;"
+            >
+
+
+                <div class="result-header">
+
+
+                    <div>
+
+                        <p class="section-label">
+                            AI GENERATED
+                        </p>
+
+                        <h2>
+                            📖 Learning Material
+                        </h2>
+
+                        <p id="resultMeta">
+                            Generated from your selected topic
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-actions">
+
+                        <button
+                            id="copySyllabusBtn"
+                            class="secondary-btn"
+                            type="button"
+                        >
+                            📋 Copy
+                        </button>
+
+
+                        <button
+                            id="downloadSyllabusBtn"
+                            class="secondary-btn"
+                            type="button"
+                        >
+                            ⬇ Download
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SEARCH -->
+
+                <div class="result-search">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input
+                        type="text"
+                        id="resultSearch"
+                        placeholder="Search inside generated material..."
+                    >
+
+                </div>
+
+
+
+                <!-- CONTENT -->
+
+                <article
+                    id="syllabusResultContent"
+                    class="result-content"
+                ></article>
+
+
+
+                <!-- BOTTOM ACTIONS -->
+
+                <div class="result-bottom-actions">
+
+                    <button
+                        id="regenerateSyllabusBtn"
+                        class="secondary-btn"
+                        type="button"
+                    >
+                        🔄 Generate Again
+                    </button>
+
+                    <button
+                        id="clearResultBtn"
+                        class="secondary-btn"
+                        type="button"
+                    >
+                        ✕ Clear Result
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEATURES
+        ================================================== -->
+
+        <section class="resource-features">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Syllabus-Based Learning
+                </h3>
+
+                <p>
+                    Generate learning material from your
+                    course topics and syllabus.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ❓
+                </div>
+
+                <h3>
+                    Question Generation
+                </h3>
+
+                <p>
+                    Create practice questions and
+                    university-style question papers.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Multilingual Learning
+                </h3>
+
+                <p>
+                    Generate learning material in
+                    multiple supported languages.
+                </p>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast AI Generation
+                </h3>
+
+                <p>
+                    Create structured educational material
+                    in seconds.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script src="resources.js"></script>
+
+</body>
+
+</html>

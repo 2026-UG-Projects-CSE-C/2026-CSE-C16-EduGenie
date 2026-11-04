@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Course Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar">
+
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <h2>Course Assistant</h2>
+
+                    <span>
+                        AI Powered Learning
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <nav class="navigation">
+
+
+                <a href="index.html" class="nav-item">
+
+    <span>⌂</span>
+
+    Dashboard
+
+</a>
+
+               <a href="index.html#generator" class="nav-item active">
+
+    <span>✦</span>
+
+    Generate Content
+
+</a>
+
+                <a href="courses.html" class="nav-item">
+
+    <span>▣</span>
+
+    My Courses
+
+</a>
+
+
+               <!-- MULTILINGUAL -->
+<a
+    href="multilingual.html"
+    class="nav-item"
+    onclick="window.location.href='multilingual.html';"
+>
+    <span>文</span>
+    Multilingual
+</a>
+
+                <a href="#" class="nav-item">
+
+                    <span>▤</span>
+
+                    Resources
+
+                </a>
+
+
+            </nav>
+
+
+
+            <div class="sidebar-bottom">
+
+
+                <div class="ai-status">
+
+                    <div class="status-dot"></div>
+
+
+                    <div>
+
+                        <strong>
+                            AI Online
+                        </strong>
+
+                        <small>
+                            Ready to generate
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+             ===================================================== -->
+
+        <main class="main">
+
+
+
+            <!-- =================================================
+                 TOP BAR
+                 ================================================= -->
+
+            <header class="topbar">
+
+
+                <div>
+
+                    <p class="welcome">
+                        WELCOME BACK
+                    </p>
+
+
+                    <h1>
+                        AI Course Assistant
+                    </h1>
+
+                </div>
+
+
+
+                <div class="topbar-right">
+
+
+                    <div class="online-badge">
+
+                        <span></span>
+
+                        AI Connected
+
+                    </div>
+
+
+
+                    <div class="profile">
+
+                        S
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================================
+                 HERO SECTION
+                 ================================================= -->
+
+            <section class="hero">
+
+
+                <div class="hero-content">
+
+
+                    <div class="hero-label">
+
+                        ✨ INTELLIGENT COURSE CREATION
+
+                    </div>
+
+
+                    <h2>
+
+                        Create complete teaching
+
+                        <span>
+                            content with AI.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Transform any subject and topic into structured,
+                        student-friendly learning material in seconds.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="hero-decoration">
+
+                    ✦
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 GENERATOR CARD
+                 ================================================= -->
+
+           <section id="generator" class="generator-card">
+
+
+                <div class="section-heading">
+
+
+                    <div>
+
+                        <h2>
+                            Generate Course Content
+                        </h2>
+
+
+                        <p>
+                            Choose what you want the AI to create for you.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="sparkle">
+
+                        ✨
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBJECT AND TOPIC
+                     ================================================= -->
+
+                <div class="form-grid">
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="form-group">
+
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="e.g. Data Structures"
+                        >
+
+
+                    </div>
+
+
+
+                    <!-- TOPIC -->
+
+                    <div class="form-group">
+
+
+                        <label for="topic">
+                            Topic
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="topic"
+                            placeholder="e.g. Binary Search Tree"
+                        >
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     CONTENT OPTIONS
+                     ================================================= -->
+
+                <div class="form-grid">
+
+
+                    <!-- CONTENT TYPE -->
+
+                    <div class="form-group">
+
+
+                        <label for="contentType">
+                            Content Type
+                        </label>
+
+
+                        <select id="contentType">
+
+
+                            <option value="lecture_notes">
+                                Lecture Notes
+                            </option>
+
+
+                            <option value="study_notes">
+                                Study Notes
+                            </option>
+
+
+                            <option value="quiz">
+                                Quiz
+                            </option>
+
+
+                            <option value="questions">
+                                Questions
+                            </option>
+
+
+                            <option value="question_paper">
+                                Question Paper
+                            </option>
+
+
+                        </select>
+
+
+                    </div>
+
+
+
+                    <!-- DIFFICULTY -->
+
+                    <div class="form-group">
+
+
+                        <label for="difficulty">
+                            Difficulty Level
+                        </label>
+
+
+                        <select id="difficulty">
+
+
+                            <option value="beginner">
+                                Beginner
+                            </option>
+
+
+                            <option value="intermediate">
+                                Intermediate
+                            </option>
+
+
+                            <option value="university" selected>
+                                University Level
+                            </option>
+
+
+                        </select>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     LANGUAGE
+                     ================================================= -->
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+
+                        <label for="language">
+                            Language
+                        </label>
+
+
+                        <select id="language">
+
+
+                            <option value="English" selected>
+                                English
+                            </option>
+
+
+                            <option value="Malayalam">
+                                Malayalam
+                            </option>
+
+
+                            <option value="Hindi">
+                                Hindi
+                            </option>
+
+
+                            <option value="Tamil">
+                                Tamil
+                            </option>
+
+
+                        </select>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     GENERATE BUTTON
+                     ================================================= -->
+
+                <button
+                    id="generateBtn"
+                    class="generate-btn"
+                >
+
+                    <span>
+                        ✦
+                    </span>
+
+
+                    Generate Course Content
+
+
+                </button>
+
+
+
+                <!-- =================================================
+                     LOADING
+                     ================================================= -->
+
+                <div
+                    id="loading"
+                    class="loading hidden"
+                >
+
+
+                    <div class="loader"></div>
+
+
+                    <div>
+
+                        <strong>
+                            AI is generating your course...
+                        </strong>
+
+
+                        <small>
+                            This may take a few seconds.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RESULT SECTION
+                 ================================================= -->
+
+            <section
+    id="resultSection"
+    class="result-section"
+    style="display: none;"
+>
+
+
+                <div class="result-header">
+
+
+                    <div>
+
+
+                        <p class="result-label">
+                            AI GENERATED CONTENT
+                        </p>
+
+
+                        <h2 id="resultTitle">
+                            Course Content
+                        </h2>
+
+
+                    </div>
+
+
+
+                    <div class="result-actions">
+
+
+                        <button id="copyBtn">
+                            Copy
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="content-card">
+
+
+                    <div id="resultContent"></div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FEATURES
+                 ================================================= -->
+
+            <section class="features">
+
+
+                <!-- AI GENERATION -->
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+                        ✦
+                    </div>
+
+
+                    <h3>
+                        AI Generation
+                    </h3>
+
+
+                    <p>
+
+                        Automatically create structured educational
+                        content for any topic.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- MULTILINGUAL -->
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+                        文
+                    </div>
+
+
+                    <h3>
+                        Multilingual
+                    </h3>
+
+
+                    <p>
+
+                        Explain learning material in different
+                        languages for better understanding.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- CLASSROOM READY -->
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+                        ▣
+                    </div>
+
+
+                    <h3>
+                        Classroom Ready
+                    </h3>
+
+
+                    <p>
+
+                        Generate objectives, explanations, examples,
+                        summaries and questions.
+
+                    </p>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FOOTER
+                 ================================================= -->
+
+            <footer>
+
+
+                <p>
+
+                    AI Course Assistant • Intelligent Educational Content Generation
+
+                </p>
+
+
+            </footer>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MARKED.JS
+         Converts AI Markdown into formatted HTML
+         ===================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+    <!-- =====================================================
+         APPLICATION JAVASCRIPT
+         ===================================================== -->
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
